@@ -116,7 +116,7 @@ export function LayeredJourney() {
 
   const content = [
     <Hero progress={linear ? still : nameProgress} />,
-    ...[0, 1, 2].map(part => <About part={part} active={!linear && active === part + 1} />),
+    ...[0, 1, 2].map(part => <About part={part} />),
     ...thoughts.map((thought, index) => <NatureScene thought={thought} index={index} active={linear || active === index + 4} />),
     <Work />,
     ...projects.map((_, index) => <Work index={index} />),

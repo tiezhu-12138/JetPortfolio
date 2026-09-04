@@ -9,25 +9,21 @@ export function Landscape({ media, active }: { media: LandscapeMedia; active: bo
   const reduce = useMediaQuery('(prefers-reduced-motion: reduce)')
   const [failed, setFailed] = useState(false)
   const [videoFailed, setVideoFailed] = useState(false)
-  const [paused, setPaused] = useState(false)
   useEffect(() => {
     const element = video.current
     if (!element) return
-    if (active && !reduce && !paused) void element.play().catch(() => {})
+    if (active && !reduce) void element.play().catch(() => {})
     else element.pause()
     return () => element.pause()
-  }, [active, reduce, paused, videoFailed])
+  }, [active, reduce, videoFailed])
 
   return (
-    <>
-      <div className="landscape">
-        {!failed && <img src={media.src} alt={media.alt} loading="lazy" width={media.width ?? 1920} height={media.height ?? 1080} onError={() => setFailed(true)} />}
-        {media.video && !reduce && !videoFailed && <video ref={video} src={media.video} poster={media.src} muted loop playsInline preload="none" aria-hidden="true" onError={() => setVideoFailed(true)} />}
-        <div className="landscape-grey" aria-hidden="true" style={{ backgroundColor: `rgba(70, 70, 70, ${media.overlay})` }} />
-        <div className="landscape-legibility" aria-hidden="true" />
-      </div>
-      {media.video && active && !reduce && !videoFailed && <button className="landscape-playback small-label" onClick={() => setPaused(value => !value)} aria-label={paused ? 'Play background video' : 'Pause background video'}>{paused ? 'PLAY' : 'PAUSE'}</button>}
-    </>
+    <div className="landscape">
+      {!failed && <img src={media.src} alt={media.alt} loading="lazy" width={media.width ?? 1920} height={media.height ?? 1080} onError={() => setFailed(true)} />}
+      {media.video && !reduce && !videoFailed && <video ref={video} src={media.video} poster={media.src} muted loop playsInline preload="none" aria-hidden="true" onError={() => setVideoFailed(true)} />}
+      <div className="landscape-grey" aria-hidden="true" style={{ backgroundColor: `rgba(70, 70, 70, ${media.overlay})` }} />
+      <div className="landscape-legibility" aria-hidden="true" />
+    </div>
   )
 }
 

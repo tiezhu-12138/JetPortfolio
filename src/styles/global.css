@@ -27,9 +27,8 @@ img { display: block; max-width: 100%; }
 .small-label { font: 400 10px/1.65 var(--font-mono); letter-spacing: .055em; white-space: pre-line; }
 .text-highlight { background: var(--charcoal); color: var(--paper); padding: .08em .18em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .corner-metadata { position: absolute; }
-.cat { display: block; width: 120px; mix-blend-mode: multiply; }
-/* Blend the white line-art canvas into the shared paper surface. */
-.cat img { width: 100%; height: auto; filter: grayscale(1) contrast(1.1); }
+.cat { display: block; width: 120px; }
+.cat img { width: 100%; height: auto; }
 .full-section { min-height: 100svh; position: relative; }
 .skip-link { position: fixed; left: 20px; top: 15px; padding: 10px 16px; z-index: 40; background: var(--charcoal); color: var(--paper); transform: translateY(-150%); opacity: 0; }
 .skip-link:focus { transform: translateY(0); opacity: 1; }
@@ -79,9 +78,8 @@ img { display: block; max-width: 100%; }
 .about-part-0 .about-photo-copy { left: 20%; top: 23%; width: 72%; }
 .about-photo-copy > p { position: relative; left: auto; top: auto; max-width: none; z-index: 3; }
 .about-photo-copy .landscape img { object-position: center; }
-.about-video { position: absolute; left: 21.5%; top: 23%; width: 61%; height: 52%; }
-.about-video .landscape-playback { top: -40px; right: 0; bottom: auto; }
-.about-video .landscape-legibility { background: color-mix(in srgb, var(--paper) 65%, transparent); }
+.about-landscape { position: absolute; left: 21.5%; top: 23%; width: 61%; height: 52%; }
+.about-landscape .landscape-legibility { background: color-mix(in srgb, var(--paper) 65%, transparent); }
 .about-part-1 > p { z-index: 3; }
 .about-meta { left: var(--gutter); top: 110px; }
 .about-primary { position: absolute; left: 28%; top: 30%; font-size: clamp(29px, 3.2vw, 49px); line-height: 1.2; max-width: 68%; }
@@ -94,7 +92,6 @@ img { display: block; max-width: 100%; }
 .descending-cat { position: absolute; width: 75px; right: 12%; bottom: 17%; }
 .about-part-1 .descending-cat { left: 44%; bottom: 9%; }
 
-.landscape-playback { position: absolute; right: 16px; bottom: 12px; z-index: 4; padding: 8px 10px; background: var(--paper); color: var(--charcoal); }
 .landscape-layer { color: var(--landscape-ink); background: var(--moss); }
 .nature-scene { position: relative; min-height: 100svh; height: 100%; isolation: isolate; }
 .landscape { position: absolute; inset: 0; z-index: 0; background: var(--moss); overflow: hidden; }
@@ -186,7 +183,7 @@ img { display: block; max-width: 100%; }
   .scroll-invitation .small-label { font-size: 7px; }
   .about { padding: 100px 24px 80px; }
   .about .about-photo-copy { left: 6%; top: max(25%, 190px); width: 88%; padding: 28px 24px; }
-  .about-video { left: 10%; top: max(24%, 190px); width: 84%; height: 60%; }
+  .about-landscape { left: 10%; top: max(24%, 190px); width: 84%; height: 60%; }
   .about-meta { top: 95px; font-size: 9px; }
   .about-primary { left: 12%; top: 32%; max-width: 82%; font-size: clamp(26px, 6.8vw, 36px); line-height: 1.17; }
   .about-theory { left: 12%; bottom: 18%; font-size: 10px; }

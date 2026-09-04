@@ -44,19 +44,19 @@ Generated with the built-in imagegen tool from user-supplied photographs on 5 Se
 
 | Asset | Photograph | Pose |
 | --- | --- | --- |
-| `cats/jet-belly-up.jpg` | IMG_2903.HEIC | Belly-up |
-| `cats/jet-reaching.jpg` | IMG_2657.HEIC | Standing and reaching |
-| `cats/jet-reclining.jpg` | IMG_2864.HEIC | Reclining |
-| `cats/jet-paws-up.jpg` | IMG_2897.HEIC | Paws-up |
+| `cats/jet-belly-up.svg` | IMG_2903.HEIC | Belly-up |
+| `cats/jet-reaching.svg` | IMG_2657.HEIC | Standing and reaching |
+| `cats/jet-reclining.svg` | IMG_2864.HEIC | Reclining |
+| `cats/jet-paws-up.svg` | IMG_2897.HEIC | Paws-up |
 
 Simplification prompt (built-in imagegen edit): keep each existing pose, orientation, composition and proportions. Replace jagged furry outlines with smooth flowing contours. Remove hair strokes, hatching, shading and texture, including on the face and tail. Use a clean charcoal pen line, roughly 4px at 700px width; retain only pointed ears, simple eyes, a tiny nose, a minimal nose-blaze contour, rounded mitten paws and a curved tail. Leave the body empty, with about 10 interior marks maximum. Pure white background and interiors; no checkerboard, grey fill, paper grain, text or shadows.
 
-Local JPEGs are sized to 700px; the shared cat CSS blends their white canvas into the page paper. These files are RGB, not transparent PNGs. Original generated PNGs are retained outside the public bundle.
+The four displayed cats are transparent SVG paths traced from the approved JPEG illustrations with VTracer spline fitting (greyscale threshold 160, speckle filter 5, path precision 2). Original dimensions and poses are preserved; the charcoal paths contain no embedded bitmap or white background. The source JPEGs are retained here for provenance but are not loaded by the site. Original generated PNGs remain outside the public bundle.
 
 ## About photographs
 
 `about/snow-tree.jpg` (About 01) and `about/snow-forest.jpg` (About 03) are web derivatives of the supplied DSC02613.ARW and DSC02598.ARW photographs, respectively. Converted with macOS sips to 1800 × 1199 JPEG at quality 72. The original RAW files remain outside the repository. Paths and descriptions are in `src/data/assets.ts`.
 
-## About video
+## About 02 landscape still
 
-`about/forest-clouds.mp4` is the complete 32.9-second landscape clip supplied as `A069_R007_0106Y3_001.R3D` (4096 × 2048, 60 fps playback metadata, no audio). REDline 65.2.1 decoded the camera look with BT.709 output to a temporary 1600 × 800 ProRes LT intermediate. FFmpeg encoded H.264, 24 fps at the original playback speed, CRF 27, slow preset, yuv420p and fast-start metadata. The MP4 is approximately 1 MB; `forest-clouds.jpg` is its first-frame poster. Original R3D and temporary intermediates remain outside the site.
+`about/forest-clouds.jpg` is the first frame extracted from the supplied `A069_R007_0106Y3_001.R3D` landscape clip. REDline 65.2.1 decoded the camera look to BT.709; the webpage uses a 1600 × 800 JPEG of approximately 35 KB. The original R3D remains outside the site. About 02 displays only this still image.

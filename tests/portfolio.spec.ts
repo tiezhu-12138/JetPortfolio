@@ -205,32 +205,11 @@ test('artwork hover stays within one degree of its resting angle', async ({ page
 })
 
 
-test('About video loads on entry, pauses on exit and honours the playback control', async ({ page }) => {
-  const requests: string[] = []
-  page.on('request', request => { if (request.url().endsWith('forest-clouds.mp4')) requests.push(request.url()) })
-  await page.goto('/')
-  const video = page.locator('#about-feeling video')
-  await expect(video).toHaveJSProperty('paused', true)
-  expect(requests).toHaveLength(0)
-  await scene(page, 'about-feeling')
-  await expect(video).toHaveJSProperty('muted', true)
-  await expect.poll(() => video.evaluate((el: HTMLVideoElement) => el.currentTime)).toBeGreaterThan(0)
-  await page.getByRole('button', { name: 'Pause background video' }).click()
-  await expect(video).toHaveJSProperty('paused', true)
-  await page.getByRole('button', { name: 'Play background video' }).click()
-  await expect(video).toHaveJSProperty('paused', false)
-  await scene(page, 'about-learning')
-  await expect(video).toHaveJSProperty('paused', true)
-  await page.emulateMedia({ reducedMotion: 'reduce' })
-  await expect(page.locator('#about-feeling video')).toHaveCount(0)
-  await expect(page.locator('#about-feeling .landscape img')).toHaveJSProperty('naturalWidth', 1600)
-})
-
-test('About video failure leaves its poster and readable copy', async ({ page }) => {
-  await page.route('**/forest-clouds.mp4', route => route.abort())
+test('About 02 uses a static landscape without loading video', async ({ page }) => {
+  const videos: string[] = []
+  page.on('request', request => { if (request.resourceType() === 'media') videos.push(request.url()) })
   await page.goto('/#about-feeling')
-  await expect(page.locator('#about-feeling video')).toHaveCount(0)
   await expect(page.locator('#about-feeling .landscape img')).toHaveJSProperty('naturalWidth', 1600)
-  await expect(page.locator('.about-second')).toBeVisible()
-  await expect(page.getByRole('button', { name: 'Pause background video' })).toHaveCount(0)
+  await expect(page.locator('#about-feeling video')).toHaveCount(0)
+  expect(videos).toEqual([])
 })

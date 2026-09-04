@@ -2,14 +2,14 @@
 export const assets = {
   about: {
     0: { src: '/assets/about/snow-tree.jpg', alt: 'A lone tree on a sunlit snowy slope beneath a blue sky.', overlay: 0.35 },
-    1: { src: '/assets/about/forest-clouds.jpg', video: '/assets/about/forest-clouds.mp4', alt: 'Clouds and rain drifting over green forested hills in changing sunlight.', overlay: 0.35, width: 1600, height: 800 },
+    1: { src: '/assets/about/forest-clouds.jpg', alt: 'Clouds and rain drifting over green forested hills in changing sunlight.', overlay: 0.35, width: 1600, height: 800 },
     2: { src: '/assets/about/snow-forest.jpg', alt: 'Snow-covered trees overlooking rolling winter hills.', overlay: 0.35 },
   },
   cats: [
-    { src: '/assets/cats/jet-belly-up.jpg', width: 700, height: 560 },
-    { src: '/assets/cats/jet-reaching.jpg', width: 560, height: 700 },
-    { src: '/assets/cats/jet-reclining.jpg', width: 700, height: 466 },
-    { src: '/assets/cats/jet-paws-up.jpg', width: 700, height: 621 },
+    { src: '/assets/cats/jet-belly-up.svg', width: 700, height: 560 },
+    { src: '/assets/cats/jet-reaching.svg', width: 560, height: 700 },
+    { src: '/assets/cats/jet-reclining.svg', width: 700, height: 466 },
+    { src: '/assets/cats/jet-paws-up.svg', width: 700, height: 621 },
   ],
   originalCats: Array.from({ length: 5 }, (_, i) => ({ src: `/assets/cats/cat-fall-0${i + 1}.svg`, width: 160, height: 200 })),
   nature: {
