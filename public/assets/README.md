@@ -1,6 +1,6 @@
 # Artwork sources
 
-Nature photographs and SVG cats remain placeholders. WORK now uses AI-generated coloured line interpretations of user-supplied Campaign Centre screenshots, not Jet's own hand drawings or exact product screenshots.
+Nature photographs remain placeholders. Cats combine the original simple SVG drawings with AI-generated line interpretations of Jet’s supplied photographs. WORK now uses AI-generated coloured line interpretations of user-supplied Campaign Centre screenshots, not Jet's own hand drawings or exact product screenshots.
 
 ## Replacement
 
@@ -8,7 +8,7 @@ Replace the JPGs and SVGs at the same paths, or edit `src/data/assets.ts`. Lands
 
 ## Sources
 
-The 8 JPGs were generated with the built-in image generation tool for this project on 5 September 2026, then exported as compressed local JPEG assets. No external image hosting is required. SVG cats are temporary original line drawings.
+The 8 JPGs were generated with the built-in image generation tool for this project on 5 September 2026, then exported as compressed local JPEG assets. No external image hosting is required. The original five SVG cats remain in use alongside the personal-photo line illustrations.
 
 Cormorant Garamond and IBM Plex Mono are self-hosted through Fontsource. Their original licence files are included in `fonts/`.
 
@@ -37,3 +37,18 @@ Generated with the built-in imagegen tool, then exported to JPEG at quality 88. 
 - `projects/campaign-create.jpg`: `05-create-campaign.webp`
 
 Prompt set: redraw each supplied screenshot as loose, slightly wobbly thin charcoal, muted blue, sage green and rust pencil contours on warm paper; preserve the full Safari frame and toolbar as hand-drawn outlines, main headings and relative panel/form/chart arrangement. Simplify tiny body text and figures into sketch strokes. No additional cats, objects, perspective or realistic chrome. Summary establishes the shared visual style for the remaining three images. Overview correction removes generated percentage labels and replaces one malformed small label with sketch strokes. The illustrations simplify content and are not records of metrics or outcomes.
+
+## Personal cat line illustrations
+
+Generated with the built-in imagegen tool from user-supplied photographs on 5 September 2026. Original HEIC photographs remain untouched outside the public website. These are generated interpretations, not hand drawings by Jet.
+
+| Asset | Photograph | Pose |
+| --- | --- | --- |
+| `cats/jet-belly-up.jpg` | IMG_2903.HEIC | Belly-up |
+| `cats/jet-reaching.jpg` | IMG_2657.HEIC | Standing and reaching |
+| `cats/jet-reclining.jpg` | IMG_2864.HEIC | Reclining |
+| `cats/jet-paws-up.jpg` | IMG_2897.HEIC | Paws-up |
+
+Simplification prompt (built-in imagegen edit): keep each existing pose, orientation, composition and proportions. Replace jagged furry outlines with smooth flowing contours. Remove hair strokes, hatching, shading and texture, including on the face and tail. Use a clean charcoal pen line, roughly 4px at 700px width; retain only pointed ears, simple eyes, a tiny nose, a minimal nose-blaze contour, rounded mitten paws and a curved tail. Leave the body empty, with about 10 interior marks maximum. Pure white background and interiors; no checkerboard, grey fill, paper grain, text or shadows.
+
+Local JPEGs are sized to 700px; the shared cat CSS blends their white canvas into the page paper. These files are RGB, not transparent PNGs. Original generated PNGs are retained outside the public bundle.

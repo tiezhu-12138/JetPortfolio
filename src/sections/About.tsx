@@ -9,6 +9,6 @@ export function About({ part }: { part: number }) {
     {part === 0 && <><p className="about-primary">{about.primary}</p><p className="about-theory">{about.theory}</p></>}
     {part === 1 && <><p className="about-second">{about.second}</p><p className="about-third">{about.third}</p></>}
     {part === 2 && <><p className="about-fourth">{about.fourth}</p><div className="about-cat"><HandDrawnCat pose={3} /><p>{about.cat}</p></div></>}
-    <HandDrawnCat className="descending-cat" pose={part} drift />
+    <HandDrawnCat className="descending-cat" pose={part} original drift />
   </div>
 }

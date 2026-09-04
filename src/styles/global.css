@@ -26,8 +26,9 @@ main:focus, .scene-layer:focus { outline: none; }
 img { display: block; max-width: 100%; }
 .small-label { font: 400 10px/1.65 var(--font-mono); letter-spacing: .055em; white-space: pre-line; }
 .corner-metadata { position: absolute; }
-.cat { display: block; width: 100px; }
-.cat img { width: 100%; height: auto; }
+.cat { display: block; width: 120px; mix-blend-mode: multiply; }
+/* Blend the white line-art canvas into the shared paper surface. */
+.cat img { width: 100%; height: auto; filter: grayscale(1) contrast(1.1); }
 .full-section { min-height: 100svh; position: relative; }
 .skip-link { position: fixed; left: 20px; top: 15px; padding: 10px 16px; z-index: 40; background: var(--charcoal); color: var(--paper); transform: translateY(-150%); opacity: 0; }
 .skip-link:focus { transform: translateY(0); opacity: 1; }
@@ -68,7 +69,7 @@ img { display: block; max-width: 100%; }
 .name-note { position: absolute; left: 68%; top: 24%; max-width: 190px; font: 400 10px/1.75 var(--font-mono); }
 .hero-copy { position: absolute; left: 20%; bottom: 12%; font-size: clamp(18px, 1.75vw, 27px); line-height: 1.28; }
 .scroll-invitation { position: absolute; left: 56%; bottom: 6%; display: flex; align-items: center; gap: 16px; }
-.scroll-invitation .cat { width: clamp(70px, 7vw, 112px); }
+.scroll-invitation .cat { width: clamp(100px, 10vw, 145px); }
 .scroll-invitation .small-label { writing-mode: vertical-rl; font-size: 9px; }
 
 .about { height: 100%; padding: 110px var(--gutter) 90px; position: relative; }
@@ -120,13 +121,13 @@ img { display: block; max-width: 100%; }
 .project-annotation::after { content: ''; display: block; width: 78px; height: 9px; border-bottom: 1px solid var(--earth); transform: rotate(-4deg) scaleX(.55); transform-origin: left; transition: transform 300ms; }
 .project-visual:hover .project-annotation::after { transform: rotate(-4deg) scaleX(1); }
 .project-reflection { grid-column: 3 / 8; white-space: pre-line; font: 11px/1.65 var(--font-mono); }
-.project-cat { position: absolute; width: 80px; top: -90px; left: 12%; }
+.project-cat { position: absolute; width: 140px; top: -90px; left: 12%; }
 .project-2 .project-visual { grid-column: 6 / 13; grid-row: 1 / 3; }
 .project-2 .project-copy, .project-2 .project-reflection { grid-column: 1 / 5; }
 .project-2 .project-artwork { rotate: 2deg; }
 .project-3 .project-visual { grid-column: 2 / 9; }
 .project-3 .project-copy { grid-column: 9 / 13; }
-.project-4 .project-cat { top: auto; bottom: 0; left: 78%; transform: rotate(125deg); width: 86px; }
+.project-4 .project-cat { top: auto; bottom: -35px; left: 85%; width: 100px; }
 
 .outro-inner { height: 100%; min-height: 100svh; padding: 120px var(--gutter) 110px; position: relative; }
 .outro-heading { position: absolute; left: 12%; top: 19%; font-size: clamp(73px, 11vw, 175px); letter-spacing: -.045em; line-height: .92; }
@@ -171,7 +172,7 @@ img { display: block; max-width: 100%; }
   .name-note { top: 60%; left: 8%; font-size: 8px; line-height: 1.65; max-width: 150px; }
   .hero-copy { bottom: 18%; left: 24px; font-size: 16px; width: calc(100% - 48px); }
   .scroll-invitation { left: auto; right: 22px; bottom: 7%; gap: 0; }
-  .scroll-invitation .cat { width: 55px; }
+  .scroll-invitation .cat { width: 80px; }
   .scroll-invitation .small-label { font-size: 7px; }
   .about { padding: 100px 24px 80px; }
   .about-meta { top: 95px; font-size: 9px; }
@@ -203,7 +204,7 @@ img { display: block; max-width: 100%; }
   .project { padding: 115px 24px 75px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
   .project-visual { width: 73%; max-width: 32svh; align-self: flex-start; }
   .project-artwork { padding: 6px; }
-  .project-cat { width: 50px; top: -56px; }
+  .project-cat { width: 85px; top: -56px; }
   .project-annotation { font-size: 17px; margin: 16px 0 0 9%; line-height: 1.2; }
   .project-copy { width: 85%; align-self: flex-end; }
   .project-copy h2 { font-size: 9px; margin-bottom: 15px; }
