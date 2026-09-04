@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { m as motion, useReducedMotion, useTransform, type MotionValue } from 'framer-motion'
+import { useReducedMotion } from 'framer-motion'
 import type { Thought } from '../data/content'
 import { SmallLabel } from './SmallLabel'
 
@@ -24,27 +24,18 @@ function Landscape({ thought, active }: { thought: Thought; active: boolean }) {
   )
 }
 
-export function NatureScene({ thought, index, progress, active, linear }: {
-  thought: Thought; index: number; progress: MotionValue<number>; active: boolean; linear: boolean
+export function NatureScene({ thought, index, active }: {
+  thought: Thought; index: number; active: boolean
 }) {
-  const start = index / 4
-  const end = (index + 1) / 4
-  const opacity = useTransform(progress,
-    [Math.max(0, start - 0.055), start, end - 0.055, end],
-    [index === 0 ? 1 : 0, 1, 1, index === 3 ? 1 : 0],
-  )
-  const y = useTransform(progress, [start, end], [14, -14])
   return (
-    <motion.article
+    <article
       className={`nature-scene nature-scene-${index + 1}`}
       aria-labelledby={`thought-${index + 1}-title`}
-      aria-hidden={!linear && !active}
       data-scene={index}
-      style={linear ? undefined : { opacity, pointerEvents: active ? 'auto' : 'none' }}
     >
-      <Landscape thought={thought} active={active || linear} />
-      <motion.div className="nature-content" style={linear ? undefined : { y }}>
-        <h3 id={`thought-${index + 1}-title`} className="small-label thought-label">{thought.label}</h3>
+      <Landscape thought={thought} active={active} />
+      <div className="nature-content">
+        <h2 id={`thought-${index + 1}-title`} className="small-label thought-label">{thought.label}</h2>
         {thought.chinese && <p className="thought-chinese" lang="zh-Hant">{thought.chinese}</p>}
         <div className="thought-body">
           {thought.prelude && <p className="thought-prelude">{thought.prelude}</p>}
@@ -55,7 +46,7 @@ export function NatureScene({ thought, index, progress, active, linear }: {
           {thought.secondary && <p className="thought-secondary">{thought.secondary}</p>}
         </div>
         <p className="thought-note">{thought.note}</p>
-      </motion.div>
-    </motion.article>
+      </div>
+    </article>
   )
 }

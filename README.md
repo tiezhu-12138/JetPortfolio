@@ -1,6 +1,6 @@
 # Jet Portfolio
 
-A quiet, interactive portfolio for Jet / 孫佳航. Editorial typography, falling cats and a scroll-driven nature essay explore the space between interfaces working and feeling natural.
+A quiet, interactive portfolio for Jet / 孫佳航. Scattered calligraphic strokes, cats and first-person reflections unfold through layered, scroll-driven scenes. The ending flows back into the opening.
 
 Built with React, TypeScript, Vite, Tailwind CSS, Framer Motion and Lenis.
 
@@ -13,6 +13,6 @@ npm run dev
 
 `npm run build` creates the production site. `npm run preview` previews it. `npm test` runs browser checks (first run: `npx playwright install chromium`).
 
-Temporary artwork lives in `public/assets/`; replace files there or update `src/data/assets.ts`. Supplied copy remains unchanged. Contact links are in `src/data/content.ts`.
+Temporary artwork lives in `public/assets/`; replace files there or update `src/data/assets.ts`. Copy and contact links are in `src/data/content.ts`. The original slender-gold-style SVG lettering and stroke offsets live in `src/data/nameStrokes.ts`.
 
-Project guidance is maintained in [agent.md](./agent.md). Includes mobile layouts, keyboard navigation and reduced-motion support.
+The single source of agent guidance and reusable design rules is [AGENTS.md](./AGENTS.md). Includes mobile layouts, keyboard navigation and automatic readable layouts for reduced motion or very short screens.

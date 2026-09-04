@@ -1,6 +1,6 @@
 # Temporary artwork
 
-All images are replaceable placeholders, not Jet's photographs or finished project drawings. The user requested that website copy remain unchanged while these placeholders are in use.
+All images are replaceable placeholders, not Jet's photographs or finished project drawings. The latest approved copy uses first-person reflection; placeholder images remain until Jet supplies replacements.
 
 ## Replacement
 
@@ -11,6 +11,8 @@ Replace the JPGs and SVGs at the same paths, or edit `src/data/assets.ts`. Lands
 The 8 JPGs were generated with the built-in image generation tool for this project on 5 September 2026, then exported as compressed local JPEG assets. No external image hosting is required. SVG cats are temporary original line drawings.
 
 Cormorant Garamond and IBM Plex Mono are self-hosted through Fontsource. Their original licence files are included in `fonts/`.
+
+The scattered name is original name-only, slender-gold-style vector lettering in `src/data/nameStrokes.ts`, rendered by `ScatteredName`. Its 28 complete strokes have independent offsets and rotations. It is not a third-party font, a traced commercial font, or a full typeface. Keep the Traditional Chinese characters `孫佳航` when replacing it.
 
 Prompt set:
 
