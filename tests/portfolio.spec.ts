@@ -145,7 +145,7 @@ test('reduced motion, short viewport fallback, asset loading and WCAG checks', a
   await expect(page.locator('.journey-linear')).toHaveCount(1)
   await expect(page.locator('.scene-layer[inert]')).toHaveCount(0)
   await expect(page.locator('html')).not.toHaveClass(/lenis/)
-  await expect(page.getByText('撥開雲霧見青天', { exact: true })).toHaveCount(1)
+  await expect(page.locator('.thought-chinese')).toHaveText(['隔牖風驚竹， 開門雪滿山。', '不識廬山真面目， 只緣身在此山中。', '行到水窮處， 坐看雲起時。', '雲無心以出岫。'])
   for (const image of await page.locator('img').all()) {
     await image.scrollIntoViewIfNeeded()
     await expect.poll(() => image.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true)
@@ -171,4 +171,35 @@ test('active layered scene remains keyboard-accessible and passes axe', async ({
   await page.getByRole('button', { name: 'Next scene', exact: true }).focus()
   await page.keyboard.press('Enter')
   await expect(page.locator('.journey')).toHaveAttribute('data-active-scene', '5')
+})
+
+test('artwork hover stays within one degree of its resting angle', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/')
+  for (let index = 1; index <= 4; index++) {
+    await page.mouse.move(0, 0)
+    await scene(page, `project-${index}`)
+    const art = page.locator(`#project-${index} .project-artwork`)
+    await art.evaluate(el => {
+      const angle = () => {
+        const style = getComputedStyle(el)
+        const matrix = new DOMMatrix(style.transform)
+        return Math.atan2(matrix.b, matrix.a) * 180 / Math.PI + (parseFloat(style.rotate) || 0)
+      }
+      const initial = angle()
+      const samples: number[] = []
+      Object.assign(window, { hoverSamples: samples })
+      const until = performance.now() + 1200
+      function sample() { samples.push(Math.abs(angle() - initial)); if (performance.now() < until) requestAnimationFrame(sample) }
+      requestAnimationFrame(sample)
+    })
+    await art.hover()
+    await page.waitForTimeout(550)
+    await page.screenshot({ path: `artifacts/work-${index}-hover.png` })
+    await page.mouse.move(0, 0)
+    await page.waitForTimeout(700)
+    const samples = await page.evaluate(() => (window as unknown as { hoverSamples: number[] }).hoverSamples)
+    expect(Math.max(...samples)).toBeLessThan(1)
+    expect(samples.at(-1)).toBeLessThan(0.05)
+  }
 })

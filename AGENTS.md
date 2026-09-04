@@ -10,9 +10,9 @@ Maintain this file when the user approves changes to design direction, reusable 
 
 - Build Jet's personal interactive space, not a conventional developer portfolio or SaaS landing page. It should express care for how interfaces feel through typography, nature, cats and small interactions.
 - Use Australian English. Write as first-person observation, curiosity and self-questioning, without second-person pronouns, lectures, universal design commandments or marketing hype. This supersedes the original exact-copy brief. Otherwise preserve approved copy unless a rewrite is requested.
-- All Chinese text is Traditional: `孫佳航` and `撥開雲霧見青天`. Do not replace the name with Simplified Chinese.
+- All Chinese text is Traditional, including `孫佳航`. THOUGHTS uses authentic quotations: 王維《冬晚對雪憶胡居士家》 for Snow, 蘇軾《題西林壁》 for Mist, 王維《終南別業》 for Mountain and 陶淵明《歸去來兮辭》 for Sky. Preserve the approved wording in `content.ts` and its source comments; do not substitute original imitations.
 - Keep images as clearly identified placeholders until the user supplies replacements. Never present them as Jet's actual photographs, screenshots or hand drawings. Do not invent personal facts, project outcomes, metrics or contact links.
-- Keep navigation labels and anchors: `INDEX`, `ABOUT`, `THOUGHTS`, `WORK`. The hero's top-right Roman year is removed; the footer year remains. Do not restore `READ AS A PAGE` or a visible reading-mode switch.
+- Keep navigation labels and anchors: `INDEX`, `ABOUT`, `THOUGHTS`, `WORK`. The hero's top-right Roman year and the footer Roman year are removed. Do not restore `READ AS A PAGE` or a visible reading-mode switch.
 
 ## Visual direction
 
@@ -22,7 +22,7 @@ Quiet, personal, editorial, tactile, poetic and slightly strange. Think old pape
 - Preserve the architectural scale of `JET`. Small pinyin, numbered labels, vertical notes and the cat scroll invitation are intentional requirements, not generic decorations to remove.
 - Keep the paper-based light theme regardless of OS colour scheme. Landscapes may use light text for legibility; this is a media treatment, not a separate dark theme.
 - Avoid gradient-heavy SaaS styling, neon, glowing cards, glassmorphism, large rounded panels, generic developer illustrations, skill-icon grids, proficiency bars and conventional “Hi, I'm…” layouts.
-- Use spacing instead of unnecessary cards or dividers. Project frames may have restrained irregular borders and a minimal paper shadow. No device mock-ups or dramatic 3D hover effects.
+- Use spacing instead of unnecessary cards or dividers. Project frames may have restrained irregular borders and a minimal paper shadow. No device mock-ups or dramatic 3D hover effects. The approved Campaign Centre illustrations retain their Safari browser frames as hand-drawn outlines. Project artwork uses CSS `rotate` for its resting tilt; Motion adds only a small hover offset through `transform`, so entering or leaving hover never spins through a full turn.
 - Paper grain is optional and must remain below 4% opacity without reducing readability; the current treatment is 2.5%. No film scratches or heavy noise.
 - Project-specific art direction overrides generic aesthetic defaults from design skills. Do not redesign the brand or adjacent sections just to satisfy a generic template rule.
 
@@ -63,6 +63,7 @@ Use the existing native CSS / Tailwind foundation rather than introducing anothe
 
 - The name uses 28 separate SVG writing strokes. At the opening, keep the Traditional Chinese characters clearly recognisable with only slight handwritten offsets. Scroll progressively separates and rotates the strokes; reverse scrolling restores the opening arrangement. Reuse the journey progress, keep the opening echo identical, and preserve the readable arrangement in reduced-motion and short-height document flow.
 - `nameStrokes.ts` contains original slender-gold-style name lettering, not a licensed commercial font or a complete typeface. Preserve that distinction when describing it.
+- WORK uses 4 AI-generated coloured line interpretations of supplied Campaign Centre screenshots: Summary, Deep Dive, Overview and Create Campaign. Preserve the complete hand-drawn Safari frame, natural image ratio and muted blue, green and rust linework. Display the original light paper image colours without multiply blending onto a yellow backing; use the shared paper token for the frame surface. Identify them as generated interpretations, not Jet's own hand drawings or exact product screenshots.
 - Cats are loose charcoal line drawings that inhabit the page, not polished stickers. Reuse the existing poses and restrained scroll response; placeholder illustration work must not displace layout and interaction work.
 - Every landscape image and video needs a neutral grey overlay above media and below text, approximately `rgba(70, 70, 70, 0.30–0.55)`. Retain muted original colour; do not substitute `grayscale(100%)`. Keep the additional contrast layer when needed for readable text.
 - Preserve image dimensions/aspect ratios, lazy loading where appropriate, meaningful alt text and failure fallbacks. Future videos must remain muted, pause outside their active scene and respect reduced motion.

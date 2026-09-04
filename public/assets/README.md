@@ -1,6 +1,6 @@
-# Temporary artwork
+# Artwork sources
 
-All images are replaceable placeholders, not Jet's photographs or finished project drawings. The latest approved copy uses first-person reflection; placeholder images remain until Jet supplies replacements.
+Nature photographs and SVG cats remain placeholders. WORK now uses AI-generated coloured line interpretations of user-supplied Campaign Centre screenshots, not Jet's own hand drawings or exact product screenshots.
 
 ## Replacement
 
@@ -26,3 +26,14 @@ Prompt set:
 - `projects/project-04.jpg`: Loose graphite drawing of an experimental interface with an organic shape, a circular gesture path and minimal controls.
 
 Projects 02-04 share this treatment: warm off-white paper, black/grey pencil, imperfect wobbly lines, light crosshatching, restrained art-book sketch, straight-on landscape 4:3 with generous margins. No device, laptop, desk, hand, photography, 3D, readable text, numbers, logos or watermark. They are illustrative placeholders, not real screenshots.
+
+## Campaign Centre line illustrations
+
+Generated with the built-in imagegen tool, then exported to JPEG at quality 88. Original inputs remain untouched in `JetDev/src/components/portfolio-screenshots/safari-mockups/campaign-centre/`. These replace the four displayed project placeholders; the old JPGs are retained but unused.
+
+- `projects/campaign-summary.jpg`: `01-dashboard-summary.webp`
+- `projects/campaign-deep-dive.jpg`: `02-dashboard-deep-dive.webp`
+- `projects/campaign-overview.jpg`: `03-campaign-details-overview.webp`
+- `projects/campaign-create.jpg`: `05-create-campaign.webp`
+
+Prompt set: redraw each supplied screenshot as loose, slightly wobbly thin charcoal, muted blue, sage green and rust pencil contours on warm paper; preserve the full Safari frame and toolbar as hand-drawn outlines, main headings and relative panel/form/chart arrangement. Simplify tiny body text and figures into sketch strokes. No additional cats, objects, perspective or realistic chrome. Summary establishes the shared visual style for the remaining three images. Overview correction removes generated percentage labels and replaces one malformed small label with sketch strokes. The illustrations simplify content and are not records of metrics or outcomes.

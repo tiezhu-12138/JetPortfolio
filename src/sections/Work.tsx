@@ -8,7 +8,6 @@ export function Work({ index = -1 }: { index?: number }) {
     <CornerMetadata className="work-meta">WORK / 03</CornerMetadata>
     <h2>SOME THINGS<br />I'VE MADE.</h2>
     <p className="work-intro-copy">None of these arrived fully formed.<br /><br />They started as rough ideas,<br />bad sketches,<br />half-working components<br />and an unreasonable number<br />of browser tabs.</p>
-    <p className="work-drawing-note small-label">FOR NOW, BORROWED SHAPES.<br />MY OWN DRAWINGS WILL FOLLOW.<br /><br />I LIKE THE IDEA OF DRAWING<br />A SCREEN AGAIN BY HAND.</p>
     <HandDrawnCat className="work-intro-cat" pose={2} drift />
   </div>
   const project = projects[index]

@@ -32,6 +32,8 @@ export const thoughts: Thought[] = [
   {
     label: 'THOUGHT 01 / INSTINCT', name: 'Instinct',
     media: { src: assets.nature.snow, alt: 'Snow-covered slopes beneath a quiet winter sky.', overlay: 0.38 },
+    // 王維《冬晚對雪憶胡居士家》
+    chinese: '隔牖風驚竹，\n開門雪滿山。',
     prelude: `I love nature partly because\nit rarely needs instructions.\n\nSnow falls.\nWater finds its way downhill.\nA path becomes obvious\nbecause somebody walked there before.`,
     caption: 'I SOMETIMES FIND\nTHAT FEELING ON A SCREEN.',
     main: `I keep thinking about interfaces\nI understood without being told.\n\nA few quiet clues,\nand somehow I knew where to begin.`,
@@ -40,7 +42,8 @@ export const thoughts: Thought[] = [
   {
     label: 'THOUGHT 02 / CURIOSITY', name: 'Curiosity',
     media: { src: assets.nature.mist, alt: 'Forested mountain ridges receding into layers of grey mist.', overlay: 0.4 },
-    chinese: '撥開雲霧見青天',
+    // 蘇軾《題西林壁》
+    chinese: '不識廬山真面目，\n只緣身在此山中。',
     main: `I always wonder\nwhat lies beyond the mist.\n\nPerhaps that small pull\nis where exploration begins.`,
     secondary: `I recognise that feeling on a screen.\n\nI touch.\nI drag.\nI scroll.\nI open something\njust to find out\nwhat happens next.`,
     note: `I don't think I want every mystery solved.\n\nSometimes I just want somewhere to look.`,
@@ -48,6 +51,8 @@ export const thoughts: Thought[] = [
   {
     label: 'THOUGHT 03 / SPACE', name: 'Space',
     media: { src: assets.nature.mountain, alt: 'A mountain ridge and distant valley under a pale sky.', overlay: 0.38 },
+    // 王維《終南別業》
+    chinese: '行到水窮處，\n坐看雲起時。',
     main: `On a mountain, I tend to find\nmy bearings before the words.\n\nA horizon.\nThe direction of a river.\nThe depth of the trees.`,
     secondary: `I wonder if a digital space\ncould feel a little like that.\n\nI'm still learning what\nscale, distance, movement\nand rhythm can do\nbefore I add another label.`,
     note: `When I make everything louder,\nI find it harder to hear anything.`,
@@ -55,6 +60,8 @@ export const thoughts: Thought[] = [
   {
     label: 'THOUGHT 04 / NATURAL', name: 'Natural',
     media: { src: assets.nature.sky, alt: 'Soft clouds drifting across an open, muted blue sky.', overlay: 0.45 },
+    // 陶淵明《歸去來兮辭》，節選
+    chinese: '雲無心以出岫。',
     main: `I don't want technology\nto disappear.\n\nI just want the conversation\nbetween us and our machines\nto become quieter.`,
     secondary: `I keep returning to small questions.\n\nWhere am I adding friction?\nWhere would I rather slow down?\n\nCould a little movement explain this?\nCould a little space be enough?\n\nI'd like the things I make\nto feel less unfamiliar.`,
     note: `The interactions I remember\noften feel obvious afterwards.\n\nI keep wondering how much care\nwent into making them feel that way.`,

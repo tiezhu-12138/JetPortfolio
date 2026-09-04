@@ -12,6 +12,6 @@ export function Outro({ progress }: { progress: MotionValue<number> }) {
     <p className="outro-note">I've spent more time here<br />than my cats ever will.<br /><br />I'm glad this little space exists.</p>
     <a href="#index" className="again"><span className="small-label">AGAIN?</span><motion.span style={reduce ? undefined : { y }}><HandDrawnCat pose={4} /></motion.span></a>
     <span className="jet-echo" aria-hidden="true">JET</span>
-    <footer className="footer small-label"><span>JET / <span lang="zh-Hant">孫佳航</span></span><span>BUILT FOR THE WEB<br />SOMEWHERE IN AUSTRALIA<br />MMXXVI</span></footer>
+    <footer className="footer small-label"><span>JET / <span lang="zh-Hant">孫佳航</span></span><span>BUILT FOR THE WEB<br />SOMEWHERE IN AUSTRALIA</span></footer>
   </div>
 }

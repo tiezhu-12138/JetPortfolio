@@ -98,21 +98,20 @@ img { display: block; max-width: 100%; }
 .thought-prelude { font-size: clamp(20px, 2.1vw, 31px); }
 .nature-scene-1 .thought-body { grid-template-columns: 1fr 1.35fr; }
 .thought-caption { margin-bottom: 28px; }
-.thought-chinese { position: absolute; top: 105px; right: var(--gutter); font: 400 18px/1.5 'Kaiti TC', 'KaiTi', serif; letter-spacing: .3em; }
+.thought-chinese { position: absolute; top: 105px; right: var(--gutter); font: 400 18px/1.5 'Kaiti TC', 'KaiTi', serif; letter-spacing: .3em; white-space: pre-line; }
 .thought-note { align-self: flex-end; width: 38%; font: 11px/1.6 var(--font-mono); white-space: pre-line; padding-right: 3vw; }
 
 .work-intro { height: 100%; min-height: 100svh; padding: 140px var(--gutter) 100px; position: relative; }
 .work-meta { top: 105px; left: var(--gutter); }
 .work-intro h2 { position: absolute; top: 23%; left: 12%; font-size: clamp(62px, 10.5vw, 165px); line-height: .89; letter-spacing: -.04em; }
 .work-intro-copy { position: absolute; top: 57%; left: 51%; font-size: clamp(21px, 2.2vw, 32px); line-height: 1.2; }
-.work-drawing-note { position: absolute; bottom: 17%; left: 15%; font-size: 9px; }
 .work-intro-cat { position: absolute; right: 8%; bottom: 12%; width: 88px; }
 .project { height: 100%; min-height: 100svh; position: relative; padding: 130px var(--gutter) 100px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-content: center; gap: 30px; }
 .project-visual { grid-column: 1 / 8; position: relative; width: 100%; max-width: 65svh; align-self: center; justify-self: center; }
-.project-artwork { position: relative; padding: 10px; background: #d0c8b9; border: 1px solid #958f82; transform: rotate(-2deg); box-shadow: 5px 9px 0 rgb(88 79 59 / 7%); }
+.project-artwork { position: relative; padding: 10px; background: var(--paper); border: 1px solid #958f82; rotate: -2deg; box-shadow: 5px 9px 0 rgb(88 79 59 / 7%); }
 .project-artwork::after { content: ''; position: absolute; inset: 5px -4px -4px 3px; border: 1px solid rgb(36 36 35 / 35%); pointer-events: none; transform: rotate(.7deg); }
-.project-artwork img { width: 100%; aspect-ratio: 4/3; object-fit: cover; mix-blend-mode: multiply; filter: saturate(.25); }
-.artwork-fallback { aspect-ratio: 4/3; display: grid; place-items: center; font: 12px var(--font-mono); }
+.project-artwork img { width: 100%; height: auto; object-fit: contain; }
+.artwork-fallback { aspect-ratio: 1615/974; display: grid; place-items: center; font: 12px var(--font-mono); }
 .sketch-corner { position: absolute; width: 25px; height: 18px; border-left: 1px solid var(--charcoal); border-top: 1px solid var(--charcoal); top: -13px; left: -14px; transform: rotate(-6deg); }
 .project-copy { grid-column: 9 / 13; align-self: center; }
 .project-copy h2 { margin-bottom: 28px; line-height: 1.8; }
@@ -124,7 +123,7 @@ img { display: block; max-width: 100%; }
 .project-cat { position: absolute; width: 80px; top: -90px; left: 12%; }
 .project-2 .project-visual { grid-column: 6 / 13; grid-row: 1 / 3; }
 .project-2 .project-copy, .project-2 .project-reflection { grid-column: 1 / 5; }
-.project-2 .project-artwork { transform: rotate(2deg); }
+.project-2 .project-artwork { rotate: 2deg; }
 .project-3 .project-visual { grid-column: 2 / 9; }
 .project-3 .project-copy { grid-column: 9 / 13; }
 .project-4 .project-cat { top: auto; bottom: 0; left: 78%; transform: rotate(125deg); width: 86px; }
@@ -195,13 +194,11 @@ img { display: block; max-width: 100%; }
   .thought-secondary { margin-left: 12%; }
   .thought-note { width: 90%; font-size: 10px; padding: 0; line-height: 1.5; }
   .thought-caption { font-size: 8px; margin-bottom: 14px; }
-  .thought-chinese { top: 116px; left: 24px; right: auto; font-size: 12px; letter-spacing: .17em; }
-  .nature-scene-2 .thought-body { padding-top: 42px; }
+  .thought-chinese { position: static; align-self: flex-end; margin-top: 12px; font-size: 12px; letter-spacing: .17em; flex-shrink: 0; }
   .work-intro { padding: 100px 24px 80px; }
   .work-meta { top: 95px; }
   .work-intro h2 { top: 25%; left: 24px; font-size: 15vw; }
   .work-intro-copy { top: 48%; left: 30%; font-size: 23px; }
-  .work-drawing-note { bottom: 13%; left: 24px; font-size: 8px; }
   .work-intro-cat { right: 9%; bottom: 13%; width: 65px; }
   .project { padding: 115px 24px 75px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
   .project-visual { width: 73%; max-width: 32svh; align-self: flex-start; }
@@ -265,7 +262,6 @@ img { display: block; max-width: 100%; }
   .project-copy h2 { margin-bottom: 10px; }
   .project-reflection { font-size: 8px; }
   .work-intro-copy { font-size: 20px; }
-  .work-drawing-note { bottom: 12%; }
   .outro-copy { font-size: 21px; top: 43%; }
   .contact-links { top: 57%; }
 }
