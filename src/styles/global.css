@@ -25,6 +25,7 @@ main:focus, .scene-layer:focus { outline: none; }
 ::selection { background: var(--charcoal); color: var(--paper); }
 img { display: block; max-width: 100%; }
 .small-label { font: 400 10px/1.65 var(--font-mono); letter-spacing: .055em; white-space: pre-line; }
+.text-highlight { background: var(--charcoal); color: var(--paper); padding: .08em .18em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .corner-metadata { position: absolute; }
 .cat { display: block; width: 120px; mix-blend-mode: multiply; }
 /* Blend the white line-art canvas into the shared paper surface. */

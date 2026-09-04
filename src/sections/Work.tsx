@@ -18,7 +18,7 @@ export function Work({ index = -1 }: { index?: number }) {
       <p className="project-annotation">{project.annotation}</p>
     </div>
     <div className="project-copy">
-      <h2 className="small-label">{project.title}</h2>
+      <h2 className="small-label"><span className="text-highlight">{project.title}</span></h2>
       <p className="project-description">{project.description}</p>
     </div>
     <p className="project-reflection">{project.reflection}</p>

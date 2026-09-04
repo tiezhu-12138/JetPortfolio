@@ -35,12 +35,12 @@ export function NatureScene({ thought, index, active }: {
     >
       <Landscape thought={thought} active={active} />
       <div className="nature-content">
-        <h2 id={`thought-${index + 1}-title`} className="small-label thought-label">{thought.label}</h2>
+        <h2 id={`thought-${index + 1}-title`} className="small-label thought-label"><span className="text-highlight">{thought.label}</span></h2>
         {thought.chinese && <p className="thought-chinese" lang="zh-Hant">{thought.chinese}</p>}
         <div className="thought-body">
           {thought.prelude && <p className="thought-prelude">{thought.prelude}</p>}
           <div className="thought-main-block">
-            {thought.caption && <SmallLabel className="thought-caption">{thought.caption}</SmallLabel>}
+            {thought.caption && <SmallLabel className="thought-caption"><span className="text-highlight">{thought.caption}</span></SmallLabel>}
             <p className="thought-main">{thought.main}</p>
           </div>
           {thought.secondary && <p className="thought-secondary">{thought.secondary}</p>}

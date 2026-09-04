@@ -23,6 +23,7 @@ Quiet, personal, editorial, tactile, poetic and slightly strange. Think old pape
 - Keep the paper-based light theme regardless of OS colour scheme. Landscapes may use light text for legibility; this is a media treatment, not a separate dark theme.
 - Avoid gradient-heavy SaaS styling, neon, glowing cards, glassmorphism, large rounded panels, generic developer illustrations, skill-icon grids, proficiency bars and conventional “Hi, I'm…” layouts.
 - Use spacing instead of unnecessary cards or dividers. Project frames may have restrained irregular borders and a minimal paper shadow. No device mock-ups or dramatic 3D hover effects. The approved Campaign Centre illustrations retain their Safari browser frames as hand-drawn outlines. Project artwork uses CSS `rotate` for its resting tilt; Motion adds only a small hover offset through `transform`, so entering or leaving hover never spins through a full turn.
+- Selected small editorial labels (Thoughts numbering and caption, Work project titles) use `.text-highlight`: charcoal background, paper text and tight square edges that follow each wrapped line. Keep this accent selective.
 - Paper grain is optional and must remain below 4% opacity without reducing readability; the current treatment is 2.5%. No film scratches or heavy noise.
 - Project-specific art direction overrides generic aesthetic defaults from design skills. Do not redesign the brand or adjacent sections just to satisfy a generic template rule.
 
