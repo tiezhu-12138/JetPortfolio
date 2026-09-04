@@ -1,5 +1,10 @@
 /** Nature remains placeholder media; original SVG cats coexist with cat and project AI interpretations of supplied photographs and screenshots. */
 export const assets = {
+  about: {
+    0: { src: '/assets/about/snow-tree.jpg', alt: 'A lone tree on a sunlit snowy slope beneath a blue sky.', overlay: 0.35 },
+    1: { src: '/assets/about/forest-clouds.jpg', video: '/assets/about/forest-clouds.mp4', alt: 'Clouds and rain drifting over green forested hills in changing sunlight.', overlay: 0.35, width: 1600, height: 800 },
+    2: { src: '/assets/about/snow-forest.jpg', alt: 'Snow-covered trees overlooking rolling winter hills.', overlay: 0.35 },
+  },
   cats: [
     { src: '/assets/cats/jet-belly-up.jpg', width: 700, height: 560 },
     { src: '/assets/cats/jet-reaching.jpg', width: 560, height: 700 },
@@ -21,4 +26,4 @@ export const assets = {
   ],
 }
 
-export type LandscapeMedia = { src: string; alt: string; video?: string; overlay: number }
+export type LandscapeMedia = { src: string; alt: string; video?: string; overlay: number; width?: number; height?: number }

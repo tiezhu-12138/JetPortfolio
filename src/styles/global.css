@@ -75,17 +75,26 @@ img { display: block; max-width: 100%; }
 
 .about { height: 100%; padding: 110px var(--gutter) 90px; position: relative; }
 .about p { white-space: pre-line; }
+.about-photo-copy { position: absolute; left: 18%; top: 19%; width: 65%; padding: 4vw 6vw; isolation: isolate; color: var(--landscape-ink); }
+.about-part-0 .about-photo-copy { left: 20%; top: 23%; width: 72%; }
+.about-photo-copy > p { position: relative; left: auto; top: auto; max-width: none; z-index: 3; }
+.about-photo-copy .landscape img { object-position: center; }
+.about-video { position: absolute; left: 21.5%; top: 23%; width: 61%; height: 52%; }
+.about-video .landscape-playback { top: -40px; right: 0; bottom: auto; }
+.about-video .landscape-legibility { background: color-mix(in srgb, var(--paper) 65%, transparent); }
+.about-part-1 > p { z-index: 3; }
 .about-meta { left: var(--gutter); top: 110px; }
 .about-primary { position: absolute; left: 28%; top: 30%; font-size: clamp(29px, 3.2vw, 49px); line-height: 1.2; max-width: 68%; }
 .about-theory { position: absolute; left: 12%; bottom: 15%; font: 11px/1.8 var(--font-mono); }
 .about-second { position: absolute; left: 13%; top: 32%; width: 44%; font-size: clamp(28px, 2.9vw, 42px); line-height: 1.18; }
 .about-third { position: absolute; left: 65%; top: 49%; max-width: 30%; font-size: clamp(17px, 1.7vw, 25px); line-height: 1.3; }
-.about-fourth { position: absolute; left: 35%; top: 25%; font-size: clamp(27px, 2.8vw, 42px); line-height: 1.2; }
+.about-fourth { text-align: right; position: absolute; left: 35%; top: 25%; font-size: clamp(27px, 2.8vw, 42px); line-height: 1.2; }
 .about-cat { position: absolute; left: 16%; bottom: 14%; display: flex; align-items: center; gap: 24px; }
 .about-cat p { max-width: 140px; font: 10px/1.7 var(--font-mono); }
 .descending-cat { position: absolute; width: 75px; right: 12%; bottom: 17%; }
 .about-part-1 .descending-cat { left: 44%; bottom: 9%; }
 
+.landscape-playback { position: absolute; right: 16px; bottom: 12px; z-index: 4; padding: 8px 10px; background: var(--paper); color: var(--charcoal); }
 .landscape-layer { color: var(--landscape-ink); background: var(--moss); }
 .nature-scene { position: relative; min-height: 100svh; height: 100%; isolation: isolate; }
 .landscape { position: absolute; inset: 0; z-index: 0; background: var(--moss); overflow: hidden; }
@@ -176,6 +185,8 @@ img { display: block; max-width: 100%; }
   .scroll-invitation .cat { width: 80px; }
   .scroll-invitation .small-label { font-size: 7px; }
   .about { padding: 100px 24px 80px; }
+  .about .about-photo-copy { left: 6%; top: max(25%, 190px); width: 88%; padding: 28px 24px; }
+  .about-video { left: 10%; top: max(24%, 190px); width: 84%; height: 60%; }
   .about-meta { top: 95px; font-size: 9px; }
   .about-primary { left: 12%; top: 32%; max-width: 82%; font-size: clamp(26px, 6.8vw, 36px); line-height: 1.17; }
   .about-theory { left: 12%; bottom: 18%; font-size: 10px; }
@@ -250,6 +261,8 @@ img { display: block; max-width: 100%; }
   .work-intro-copy { font-size: 23px; top: 53%; }
 }
 @media (max-width: 767px) and (max-height: 740px) {
+  .about .about-photo-copy { padding-block: 16px; }
+  .about-cat { bottom: 7%; }
   .about-second { top: 28%; font-size: 22px; }
   .about-third { bottom: 12%; font-size: 15px; }
   .about-fourth { font-size: 23px; }

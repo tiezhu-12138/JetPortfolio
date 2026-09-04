@@ -1,26 +1,33 @@
 import { useEffect, useRef, useState } from 'react'
-import { useReducedMotion } from 'framer-motion'
+import { useMediaQuery } from '../hooks/useMediaQuery'
+import type { LandscapeMedia } from '../data/assets'
 import type { Thought } from '../data/content'
 import { SmallLabel } from './SmallLabel'
 
-function Landscape({ thought, active }: { thought: Thought; active: boolean }) {
-  const { media } = thought
+export function Landscape({ media, active }: { media: LandscapeMedia; active: boolean }) {
   const video = useRef<HTMLVideoElement>(null)
-  const reduce = useReducedMotion()
+  const reduce = useMediaQuery('(prefers-reduced-motion: reduce)')
   const [failed, setFailed] = useState(false)
+  const [videoFailed, setVideoFailed] = useState(false)
+  const [paused, setPaused] = useState(false)
   useEffect(() => {
-    if (!video.current) return
-    if (active && !reduce) void video.current.play().catch(() => {})
-    else video.current.pause()
-  }, [active, reduce])
+    const element = video.current
+    if (!element) return
+    if (active && !reduce && !paused) void element.play().catch(() => {})
+    else element.pause()
+    return () => element.pause()
+  }, [active, reduce, paused, videoFailed])
 
   return (
-    <div className="landscape">
-      {!failed && <img src={media.src} alt={media.alt} loading="lazy" width="1920" height="1080" onError={() => setFailed(true)} />}
-      {media.video && !reduce && <video ref={video} src={media.video} poster={media.src} muted loop playsInline preload="none" aria-hidden="true" />}
-      <div className="landscape-grey" aria-hidden="true" style={{ backgroundColor: `rgba(70, 70, 70, ${media.overlay})` }} />
-      <div className="landscape-legibility" aria-hidden="true" />
-    </div>
+    <>
+      <div className="landscape">
+        {!failed && <img src={media.src} alt={media.alt} loading="lazy" width={media.width ?? 1920} height={media.height ?? 1080} onError={() => setFailed(true)} />}
+        {media.video && !reduce && !videoFailed && <video ref={video} src={media.video} poster={media.src} muted loop playsInline preload="none" aria-hidden="true" onError={() => setVideoFailed(true)} />}
+        <div className="landscape-grey" aria-hidden="true" style={{ backgroundColor: `rgba(70, 70, 70, ${media.overlay})` }} />
+        <div className="landscape-legibility" aria-hidden="true" />
+      </div>
+      {media.video && active && !reduce && !videoFailed && <button className="landscape-playback small-label" onClick={() => setPaused(value => !value)} aria-label={paused ? 'Play background video' : 'Pause background video'}>{paused ? 'PLAY' : 'PAUSE'}</button>}
+    </>
   )
 }
 
@@ -33,7 +40,7 @@ export function NatureScene({ thought, index, active }: {
       aria-labelledby={`thought-${index + 1}-title`}
       data-scene={index}
     >
-      <Landscape thought={thought} active={active} />
+      <Landscape media={thought.media} active={active} />
       <div className="nature-content">
         <h2 id={`thought-${index + 1}-title`} className="small-label thought-label"><span className="text-highlight">{thought.label}</span></h2>
         {thought.chinese && <p className="thought-chinese" lang="zh-Hant">{thought.chinese}</p>}
